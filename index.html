@@ -9,6 +9,7 @@
         .step-card { display: none; }
         .step-card.active { display: block; animation: fadeIn 0.4s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .concept-map { font-size: 0.8rem; color: #6366f1; font-weight: bold; }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen font-sans border-t-8 border-indigo-600">
@@ -17,64 +18,71 @@
         <div class="bg-white shadow-2xl rounded-3xl overflow-hidden border border-slate-200">
             
             <div class="bg-indigo-600 p-6 text-center text-white">
-                <h1 class="text-2xl font-black uppercase tracking-widest">Grammar Pathway</h1>
-                <p class="text-indigo-100 text-sm mt-1 italic">Inspired by Ms. Afnan</p>
+                <h1 class="text-2xl font-black uppercase tracking-widest text-center">
+                    Grammar Pathway <br>
+                    <span class="text-lg font-medium">خريطة مفاهيم القواعد</span>
+                </h1>
+                <p class="text-indigo-100 text-sm mt-2 italic font-bold">Inspired by Ms. Afnan | برعاية أستاذة أفنان</p>
             </div>
 
             <div class="p-8">
                 <div id="step-1" class="step-card active">
-                    <h2 class="text-lg font-bold mb-6 text-slate-700 text-center">1. Identify Sentence Type:</h2>
+                    <div class="concept-map mb-2 text-center">Concept Map: Sentence Type / خريطة المفاهيم: نوع الجملة</div>
+                    <h2 class="text-lg font-bold mb-6 text-slate-700 text-center border-b pb-2">1. Choose Type / اختر نوع الجملة:</h2>
                     <div class="flex flex-col gap-4">
                         <button onclick="nextStep(1, 2, 'nominal')" class="p-4 bg-white border-2 border-indigo-100 hover:border-indigo-500 rounded-xl font-bold text-indigo-700 transition-all text-left flex justify-between items-center">
-                            <span>Nominal (State of Being)</span>
-                            <span class="text-xs bg-indigo-100 px-2 py-1 rounded text-indigo-600">e.g. He is...</span>
+                            <span>Nominal (State) / جملة اسمية</span>
+                            <span class="text-xs bg-indigo-100 px-2 py-1 rounded text-indigo-600">Am / Is / Are</span>
                         </button>
                         <button onclick="nextStep(1, 2, 'verbal')" class="p-4 bg-white border-2 border-emerald-100 hover:border-emerald-500 rounded-xl font-bold text-emerald-700 transition-all text-left flex justify-between items-center">
-                            <span>Verbal (Action)</span>
-                            <span class="text-xs bg-emerald-100 px-2 py-1 rounded text-emerald-600">e.g. He plays...</span>
+                            <span>Verbal (Action) / جملة فعلية</span>
+                            <span class="text-xs bg-emerald-100 px-2 py-1 rounded text-emerald-600">Do / Play / Work</span>
                         </button>
                     </div>
                 </div>
 
                 <div id="step-2" class="step-card">
-                    <h2 class="text-lg font-bold mb-6 text-slate-700 text-center">2. Choose the Tense:</h2>
+                    <div class="concept-map mb-2 text-center">Concept Map: Tense / خريطة المفاهيم: الزمن</div>
+                    <h2 class="text-lg font-bold mb-6 text-slate-700 text-center border-b pb-2">2. Select Tense / اختر الزمن:</h2>
                     <div class="grid grid-cols-2 gap-4">
-                        <button onclick="nextStep(2, 3, 'present')" class="p-6 border rounded-2xl hover:bg-slate-50 font-bold text-slate-600">Present (Now)</button>
-                        <button onclick="nextStep(2, 3, 'past')" class="p-6 border rounded-2xl hover:bg-slate-50 font-bold text-slate-600">Past (Then)</button>
+                        <button onclick="nextStep(2, 3, 'present')" class="p-6 border rounded-2xl hover:bg-slate-50 font-bold text-slate-600">Present / مضارع</button>
+                        <button onclick="nextStep(2, 3, 'past')" class="p-6 border rounded-2xl hover:bg-slate-50 font-bold text-slate-600">Past / ماضي</button>
                     </div>
                 </div>
 
                 <div id="step-3" class="step-card">
-                    <h2 class="text-lg font-bold mb-6 text-slate-700 text-center">3. Select Subject:</h2>
+                    <div class="concept-map mb-2 text-center">Concept Map: Subject / خريطة المفاهيم: الفاعل</div>
+                    <h2 class="text-lg font-bold mb-6 text-slate-700 text-center border-b pb-2">3. Subject (Number & Gender) / الفاعل والنوع:</h2>
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="nextStep(3, 4, 'he')" class="p-4 border rounded-xl hover:bg-slate-50">Male (He)</button>
-                        <button onclick="nextStep(3, 4, 'she')" class="p-4 border rounded-xl hover:bg-slate-50">Female (She)</button>
-                        <button onclick="nextStep(3, 4, 'i')" class="p-4 border rounded-xl hover:bg-slate-50">Self (I)</button>
-                        <button onclick="nextStep(3, 4, 'plural')" class="p-4 border rounded-xl hover:bg-slate-50">Plural (We/They)</button>
+                        <button onclick="nextStep(3, 4, 'he')" class="p-4 border rounded-xl hover:bg-slate-50">He / ذكر (هو)</button>
+                        <button onclick="nextStep(3, 4, 'she')" class="p-4 border rounded-xl hover:bg-slate-50">She / أنثى (هي)</button>
+                        <button onclick="nextStep(3, 4, 'i')" class="p-4 border rounded-xl hover:bg-slate-50">I / المتحدث (أنا)</button>
+                        <button onclick="nextStep(3, 4, 'plural')" class="p-4 border rounded-xl hover:bg-slate-50">Plural / جمع (نحن-هم)</button>
                     </div>
                 </div>
 
                 <div id="step-4" class="step-card">
-                    <h2 class="text-lg font-bold mb-6 text-slate-700 text-center">4. Sentence Form:</h2>
+                    <div class="concept-map mb-2 text-center">Concept Map: Form / خريطة المفاهيم: حالة الجملة</div>
+                    <h2 class="text-lg font-bold mb-6 text-slate-700 text-center border-b pb-2">4. Sentence Form / حالة الجملة:</h2>
                     <div class="grid grid-cols-1 gap-3">
-                        <button onclick="finish('pos')" class="p-3 bg-green-50 border border-green-200 rounded-lg text-green-700 font-bold hover:bg-green-100">Positive (+)</button>
-                        <button onclick="finish('neg')" class="p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 font-bold hover:bg-red-100">Negative (-)</button>
-                        <button onclick="finish('ques')" class="p-3 bg-blue-50 border border-blue-200 rounded-lg text-blue-700 font-bold hover:bg-blue-100">Simple Question (?)</button>
-                        <button onclick="finish('wh')" class="p-3 bg-amber-50 border border-amber-200 rounded-lg text-amber-700 font-bold hover:bg-amber-100">Double Question (WH-)</button>
+                        <button onclick="finish('pos')" class="p-3 bg-green-50 border border-green-200 rounded-lg text-green-700 font-bold hover:bg-green-100">Positive / مثبت (+)</button>
+                        <button onclick="finish('neg')" class="p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 font-bold hover:bg-red-100">Negative / منفي (-)</button>
+                        <button onclick="finish('ques')" class="p-3 bg-blue-50 border border-blue-200 rounded-lg text-blue-700 font-bold hover:bg-blue-100">Question / سؤال (?)</button>
+                        <button onclick="finish('wh')" class="p-3 bg-amber-50 border border-amber-200 rounded-lg text-amber-700 font-bold hover:bg-amber-100 italic font-black">Double Question (WH) / سؤال بأداة</button>
                     </div>
                 </div>
 
                 <div id="result-step" class="step-card">
-                    <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-xl">
+                    <div class="bg-slate-900 text-white rounded-2xl p-6 shadow-xl text-center">
                         <div class="mb-6">
-                            <span class="text-indigo-400 text-xs font-black uppercase tracking-tighter">The Rule Pattern</span>
+                            <span class="text-indigo-400 text-xs font-black uppercase tracking-tighter">The Rule Pattern / نمط القاعدة</span>
                             <p id="rule-display" class="text-2xl font-mono mt-2 text-white"></p>
                         </div>
-                        <div class="mb-6">
-                            <span class="text-emerald-400 text-xs font-black uppercase tracking-tighter">Real Example</span>
+                        <div class="mb-6 border-t border-slate-700 pt-4">
+                            <span class="text-emerald-400 text-xs font-black uppercase tracking-tighter">Real Example / مثال واقعي</span>
                             <p id="example-display" class="text-xl italic text-slate-300 mt-2"></p>
                         </div>
-                        <button onclick="resetApp()" class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-bold transition-all transform hover:scale-105">New Pathway</button>
+                        <button onclick="resetApp()" class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-bold transition-all">New Pathway / مسار جديد</button>
                     </div>
                 </div>
             </div>
@@ -106,23 +114,23 @@
 
             if(isNominal) {
                 let be = isPresent ? (data.sub === 'i' ? 'am' : (data.sub === 'plural' ? 'are' : 'is')) : (data.sub === 'plural' ? 'were' : 'was');
-                if(data.status === 'pos') { rule = `S + ${be} + Complement`; ex = `${data.sub.toUpperCase()} ${be} a student.`; }
-                else if(data.status === 'neg') { rule = `S + ${be} + NOT`; ex = `${data.sub.toUpperCase()} ${be} not here.`; }
-                else if(data.status === 'ques') { rule = `${be.toUpperCase()} + S + ...?`; ex = `${be.toUpperCase()} ${data.sub} ready?`; }
-                else if(data.status === 'wh') { rule = `WH + ${be} + S?`; ex = `Where ${be} ${data.sub}?`; }
+                if(data.status === 'pos') { rule = `Subject + ${be}`; ex = `${data.sub.toUpperCase()} ${be} at school.`; }
+                else if(data.status === 'neg') { rule = `Subject + ${be} + NOT`; ex = `${data.sub.toUpperCase()} ${be} not ready.`; }
+                else if(data.status === 'ques') { rule = `${be.toUpperCase()} + Subject ...?`; ex = `${be.toUpperCase()} ${data.sub} a doctor?`; }
+                else if(data.status === 'wh') { rule = `WH + ${be} + Subject?`; ex = `Where ${be} ${data.sub}?`; }
             } else {
                 if(isPresent) {
                     let aux = (data.sub === 'he' || data.sub === 'she') ? 'does' : 'do';
-                    let v = (data.sub === 'he' || data.sub === 'she') ? 'works' : 'work';
-                    if(data.status === 'pos') { rule = `S + Verb(s)`; ex = `${data.sub.toUpperCase()} ${v} hard.`; }
-                    else if(data.status === 'neg') { rule = `S + ${aux} + NOT + Verb`; ex = `${data.sub.toUpperCase()} ${aux} not work.`; }
-                    else if(data.status === 'ques') { rule = `${aux.toUpperCase()} + S + Verb?`; ex = `${aux.toUpperCase()} ${data.sub} work?`; }
-                    else if(data.status === 'wh') { rule = `WH + ${aux} + S + Verb?`; ex = `Why ${aux} ${data.sub} work?`; }
+                    let v = (data.sub === 'he' || data.sub === 'she' && data.status === 'pos') ? 'works' : 'work';
+                    if(data.status === 'pos') { rule = `Subject + Verb(s)`; ex = `${data.sub.toUpperCase()} ${v} hard.`; }
+                    else if(data.status === 'neg') { rule = `Subject + ${aux} + NOT + Verb`; ex = `${data.sub.toUpperCase()} ${aux} not work.`; }
+                    else if(data.status === 'ques') { rule = `${aux.toUpperCase()} + Subject + Verb?`; ex = `${aux.toUpperCase()} ${data.sub} sleep?`; }
+                    else if(data.status === 'wh') { rule = `WH + ${aux} + Subject + Verb?`; ex = `How ${aux} ${data.sub} study?`; }
                 } else {
-                    if(data.status === 'pos') { rule = `S + Verb(ed)`; ex = `${data.sub.toUpperCase()} worked yesterday.`; }
-                    else if(data.status === 'neg') { rule = `S + DID NOT + Verb`; ex = `${data.sub.toUpperCase()} did not work.`; }
-                    else if(data.status === 'ques') { rule = `DID + S + Verb?`; ex = `Did ${data.sub} work?`; }
-                    else if(data.status === 'wh') { rule = `WH + DID + S + Verb?`; ex = `When did ${data.sub} work?`; }
+                    if(data.status === 'pos') { rule = `Subject + Verb(ed)`; ex = `${data.sub.toUpperCase()} arrived yesterday.`; }
+                    else if(data.status === 'neg') { rule = `Subject + DID NOT + Verb`; ex = `${data.sub.toUpperCase()} did not play.`; }
+                    else if(data.status === 'ques') { rule = `DID + Subject + Verb?`; ex = `Did ${data.sub} see that?`; }
+                    else if(data.status === 'wh') { rule = `WH + DID + Subject + Verb?`; ex = `What did ${data.sub} eat?`; }
                 }
             }
             document.getElementById('rule-display').innerText = rule;
@@ -133,4 +141,3 @@
     </script>
 </body>
 </html>
-
